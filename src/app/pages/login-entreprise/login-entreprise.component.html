@@ -1,0 +1,73 @@
+<!--<app-header></app-header>
+<div class="container">
+  <header>Connexion</header>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="field email-field">
+      <div class="input-field">
+        <input type="email" formControlName="email" placeholder="Enter your email" class="email" />
+      </div>
+
+    </div>
+    <div class="field create-password">
+      <div class="input-field">
+        <input formControlName="password" type="password" placeholder="Create password" class="password" />
+        <i class="bx bx-hide show-hide"></i>
+      </div>
+
+    </div>
+
+    <div class="choix">
+      <button class="see-more" type="submit" value="Submit Now">Login</button>
+    </div>
+
+    <div class="rejoiner">
+      <span class="or">ou</span>
+      <a routerLinkActive="active" class="link"> Rejoignez-nous </a>
+    </div>
+  </form>
+</div>
+
+<app-footer></app-footer>-->
+
+<div class="tab-content" id="nav-tabContent">
+
+<div class="tab-pane fade show active" id="nav-Employeur" role="tabpanel" aria-labelledby="nav-Employeur-tab">
+
+<section>
+  <div class="form-box">
+    <div class="form-value">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h2>Connexion</h2>
+
+  <div class="inputbox">
+    <div class="input-field">
+      <input type="email" formControlName="email" placeholder="Email" class="email" />
+    </div>
+
+  </div>
+  
+  <div>
+    <div class="inputbox"
+      [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+      <input formControlName="password" type="password" placeholder="Mot de passe" class="password" />
+       <!-- <i (click)="hideShowPass()" class="fa {{eyeIcon}}"></i>  -->
+
+    </div>
+  </div>
+  
+  <div class="forget">
+    <label><input type="checkbox">Se souvenir de moi</label>
+    <a href="#">Mot de passe oublié?</a>
+  </div>
+  <button (click)="onSubmit()" type="submit">Se connecter</button>
+  <div class="register">
+    <p>Don't have an account? <a href="http://localhost:3000/espcae-entreprise">S'inscrire</a></p>
+  </div>
+</form>
+</div>
+</div>
+</section>
+</div>
+</div>
+
+<app-footer></app-footer>

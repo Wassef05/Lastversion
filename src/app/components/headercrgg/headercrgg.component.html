@@ -1,0 +1,37 @@
+
+<app-head></app-head>
+<header 
+id="headercrg" 
+class="header">
+    <nav class="nav container flex">
+      <!-- <a href="#" class="logo-content flex">
+     
+        <img class="logoo" src="assets/images/png.png" alt="">
+      </a> -->
+  
+      <div class="menu-content">
+        <ul class="menu-list flex">
+          <!-- Les liens peuvent être ajustés en fonction de vos routes -->
+          <li><a routerLink="/" class="nav-link active-navlink" routerLinkActive="active-navlink">Accueil</a></li>
+          <li><a routerLink="/jobs" class="nav-link" routerLinkActive="active-navlink">Offres</a></li>
+          <li><a routerLink="/actualites" class="nav-link" routerLinkActive="active-navlink">Actualite</a></li>
+          <li><a routerLink="/espace-entreprise" class="nav-link" routerLinkActive="active-navlink">Espace Entreprise</a></li>
+          <li><a routerLink="/travaux-de-recherche" class="nav-link" routerLinkActive="active-navlink">Thèse DR</a></li>
+          <li><a routerLink="/espace-employeur" class="nav-link" routerLinkActive="active-navlink">Espace Candidat</a></li>
+        </ul>
+      </div>
+      
+      <div class="contact-content flex">
+        <i class='bx bx-phone phone-icon'></i>
+        <ng-container *ngIf="isLogged">        
+          <span class="phone-number" routerLink="/mon-espace/mon-profile">Mon profile</span>
+        </ng-container>
+        <ng-container *ngIf="!isLogged">        
+          <span class="phone-number" routerLink="/login">Connexion</span>
+        </ng-container>
+      </div>
+  
+      <i class='bx bx-menu navOpen-btn'></i>
+    </nav>
+  </header>
+  

@@ -1,0 +1,30 @@
+ 
+<nav style="background-color: #3068bd93;">
+    <div class="sidebar-button">
+      <div class="menu-list flex" style="color: white; margin: 20px; ">
+      <a href="#" class="Acceuil"><span >  Acceuil</span></a>
+      <a  routerLink="/jobs"><span >  Offres</span></a>
+     <a  routerLink="/actualites"> <span >  Actualite</span></a>
+      <a href="" routerLink="/travaux-de-recherche"><span >  Thèse DR</span></a>
+    </div>
+    
+
+
+    </div>
+    
+    <!-- <div class="profile-details">
+     <img class="avatar border-gray" src="assets/images/wassef.jpg" alt="..." />
+    <span class="admin_name">{{name}}<span className='role'>{{role}}</span></span><br/>
+     
+      
+    </div> -->
+    <div class="profile-details">
+      <label for="profileImageUpload" class="profile-upload">
+        <i class='bx bx-upload'></i>
+      </label>
+      <input type="file" id="profileImageUpload" class="custom-file-input" (change)="uploadProfileImage($event)">
+      <img class="avatar border-gray" [src]="profileImageSrc || 'assets/images/default-avatar.jpg'" alt="...">
+      <span class="admin_name">{{name}}<span class='role'>{{role}}</span></span>
+    </div>
+  </nav>
+ 

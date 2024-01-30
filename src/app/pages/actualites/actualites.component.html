@@ -1,0 +1,23 @@
+<app-header class="app-header"></app-header>
+<div class="container content" style="height: 100%;">
+    <div class="title-container">Actualités emploi</div>
+    <div class="list-activity">
+        <div class="lefs">
+            <h2>Actualités et conseils RH</h2>
+            <span (click)="get('Tous')">Tous les articles</span>
+            <span (click)="get('Evenement')">Evenement</span>
+            <span (click)="get('Comité')">Comité</span>
+            <span (click)="get('Mediatique')">Mediatique</span>
+        </div>
+        <div class="rights">
+
+            <div class="activity" *ngFor="let item of actualites">
+                <div class="logo"><img src="http://localhost:3000/{{item.image}}" class="logo"></div>
+                <div class="description">
+                    <h5 class="title">{{item.titre}}</h5>
+                    <span>Date : {{item.createdAt| date:'dd-MM-yyyy'}} </span>
+                    <p class="descrip"> {{item.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>

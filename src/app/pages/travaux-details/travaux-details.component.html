@@ -1,0 +1,57 @@
+
+<app-header></app-header>
+  <div class="container content" style="height: 100%;">
+
+    <div class="title-container">
+      <h1>Travaux de recherche</h1>
+    </div> 
+ 
+   
+    <article class="ad5-padding-y-lg">
+        <header class="ad5-container ad5-max-width-xs ad5-margin-bottom-lg">
+          <div class="ad5-text-component ad5-text-center ad5-line-height-lg ad5-text-gap-md ad5-margin-bottom-md">
+            <h1>{{travaux.titre}}</h1><br>
+            <p class="ad5-color-contrast-medium ad5-text-md" style="font-weight: bold;">Laboratoire : {{travaux.labo}}</p>
+            <p class="ad5-color-contrast-medium ad5-text-md" style="font-weight: bold;">Spécialités :  {{travaux.specialite}}</p>
+            <p class="ad5-color-contrast-medium ad5-text-md" style="font-weight: bold;">Resource :  <a
+              href="http://localhost:3000/{{travaux.fichier}}" target="_blank">Télecharger</a></p>
+          </div>
+      
+          <div class="ad5-flex ad5-justify-center">
+            <div class="author author--meta">
+              
+      
+              <div class="author__content ad5-text-component ad5-text-gap-2xs" style="    margin-top: -19px;">
+                <h4 class="ad5-text-base"><a   rel="author">{{travaux.createur.firstName}} {{travaux.specialite}}</a></h4>
+                <p class="ad5-text-sm ad5-color-contrast-medium"><time style="    text-align: center;
+                  padding-left: 27px;
+                  font-size: 11px;
+                  font-weight: bold;">{{travaux.createdAt|date:'dd-MM-yyyy'}}</time> </p>
+              </div>
+              <a  href="http://localhost:3000/{{travaux.createur.cv}}" target="_blank" class="author__img-wrapper">
+                <i class='bx bx-download' style="    margin-top: 18px;
+                margin-left: 11px;
+                margin-bottom: 24px;
+                color: #003d61;
+                font-size: 26px;
+                font-weight: bold;"></i>
+              </a>
+            </div>
+          </div>
+        </header>
+      
+        <figure class="ad5-container ad5-max-width-lg ad5-margin-bottom-lg">
+          <img class="ad5-block ad5-width-100% ad5-radius-lg" src="http://localhost:3000/{{travaux.image}}"  alt="Image description">
+        </figure>
+      
+        <div class="ad5-container ad5-max-width-adaptive-sm">
+          <div class="ad5-text-component ad5-line-height-lg ad5-text-gap-md" style="    width: 180%;
+          margin-left: -200px;">
+            <p>{{travaux.description}} 
+        </div>
+        </div>
+      </article>
+              
+        </div>
+   
+ 

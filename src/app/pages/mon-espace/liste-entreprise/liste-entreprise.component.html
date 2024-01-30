@@ -1,0 +1,92 @@
+
+<app-header></app-header>
+<div className='navigation'>
+    <i >
+      <i class='bx bx-home-alt-2'></i> Dashboard / <i class='bx bxs-calendar'></i> Liste des entreprise
+    </i>
+  </div>
+ 
+
+ 
+
+<div class="main-content">
+ 
+ <div class="container"> 
+  <div class="container">
+    <div class="table-wrap">
+      
+      
+      <input  type="text" class="search form-control" [(ngModel)]="value" (ngModelChange)="valuechange($event)" placeholder="Recherche">   
+        <table class="table table-responsive table-borderless">
+            <thead>
+                <th>Nom</th>
+                 
+                <th>Logo</th>
+                <th>Adresse</th>
+                
+                <th>Email</th>
+                <th>Responsable</th>
+                <th>RNE</th>
+                <th>Status</th>
+                <th>Action</th>
+
+                 
+            </thead>
+            <tbody>
+              <ng-container *ngFor="let item of company| paginate: { itemsPerPage: 5, currentPage: p}">
+               
+                <tr class="align-middle alert border-bottom" role="alert">
+                    <td style="width: 16%;">
+                      {{item.nom}}
+                    </td>
+                    <td >
+                      <img src="http://localhost:3000/upload/{{ item.logo }}" alt="Logo">
+                    </td>
+                    <td >
+                        
+                             {{item.gouvernorat}} 
+                                
+                    </td>
+                    <td>
+                         {{item.email}} 
+                    </td>
+                    <td style="text-align: center;">
+                      {{item.responsable}} 
+                    </td>
+                   
+                    <td>
+                      <a href="http://localhost:3000/upload/{{ item.rne }}" target="_blank">
+                          <i class="fa fa-eye" aria-hidden="true"></i> 
+                      </a>
+                  </td>
+
+
+                    <td style="text-align: center;">
+                      <ng-container *ngIf="item.active">
+                        Active
+                      </ng-container>
+                      <ng-container *ngIf="!item.active">
+                        Desactive
+                      </ng-container>
+                    </td>
+
+                    <td >{{item.action}}
+                      <i *ngIf="!item.active" class='bx bx-message-square-check delete' (click)="update(item._id)"></i>
+                    
+                      <i class='bx bx-x-circle delete' (click)="delet(item._id)"></i>
+                    
+                    </td>
+                   
+                </tr>
+            </ng-container>
+              </tbody>
+
+        </table>
+        <div class="pag">
+        <pagination-controls  previousLabel=" "
+        nextLabel=" " (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+</div>
+    </div>
+</div>

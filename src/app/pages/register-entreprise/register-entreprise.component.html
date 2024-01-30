@@ -1,0 +1,130 @@
+<body class="image3">
+  <app-header></app-header>
+
+  <div class="">
+    <section class="content">
+      <header style="color: white ;">
+        Créer votre espace entreprise
+      </header>
+      <form [formGroup]="entrepriseForm" (ngSubmit)="onSubmit()" class="form">
+        <!-- <form [formGroup]="entrepriseForm" (ngSubmit)="onSubmit()" class="form" enctype="multipart/form-data"> -->
+
+        <div class="input-box">
+          <label>Nom d'entreprise</label>
+          <input formControlName="nom" type="text" placeholder="Enter le nom de votre entreprise" required />
+        </div>
+        <div class="input-box">
+          <label>Responsable</label>
+          <input formControlName="responsable" type="text" placeholder="entrer votre nom" required />
+        </div>
+
+        <div class="input-box">
+          <label> Adresse Email</label>
+          <input formControlName="email" type="email" placeholder="Entrer l'email personnel de l'entreprise"
+            required />
+        </div>
+
+        <div class="input-box">
+          <label>Mot de passe</label>
+          <input formControlName="password" type="password" placeholder="Mot de passe" required />
+        </div>
+        <div class="input-box">
+          <label>confirmer Mot de passe</label>
+          <input formControlName="password" type="password" placeholder="Mot de passe" required />
+        </div>
+        <div class="input-box">
+          <label>Adresse</label>
+          <input formControlName="adresse" type="text" placeholder="Adresse" required />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Télephone</label>
+            <input formControlName="telephone" type="number" placeholder="Entrer numero telephone" required />
+          </div>
+        </div>
+        <div class="input-box">
+          <label>Gouvernement</label>
+          <div class="select-box">
+            <select formControlName="gouvernorat" (change)="changeGov($event)">
+              <option value="">Choisir ville</option>
+              <option ngValue="Ariana">Ariana </option>
+              <option ngValue="Ariana">tunis </option>
+
+              <option ngValue="Ariana">sousse </option>
+              <option ngValue="Ariana">kairouan </option>
+              <option ngValue="Ariana">monastir </option>
+              <option ngValue="Ariana">ben arous </option>
+              <option ngValue="Ariana">siliana </option>
+              <option ngValue="Ariana">manouba </option>
+              <option ngValue="Ariana">mahdia </option>
+              <option ngValue="Ariana">sfax </option>
+              <option ngValue="Ariana">kef </option>
+              <option ngValue="Ariana">jendouba </option>
+              <option ngValue="Ariana">gasserine </option>
+              <option ngValue="Ariana">nabel </option>
+              <option ngValue="Ariana">zaghouan </option>
+              <option ngValue="Ariana">gafsa </option>
+              <option ngValue="Ariana">gabes </option>
+              <option ngValue="Ariana">mednin </option>
+              <option ngValue="Ariana">jerba </option>
+              <option ngValue="Ariana">sidi bouzid </option>
+              <option ngValue="Ariana">baja </option>
+              <option ngValue="Ariana">gbelli </option>
+              <option ngValue="Ariana">tataouin </option>
+
+
+
+
+
+            </select>
+          </div>
+        </div>
+        <div class="column">
+          <div class="input-box">
+            <label>Logo</label>
+            <input type="file" name="logo" value="logo" placeholder="Entrer le logo" required
+              (change)="onChange($event)" />
+          </div>
+          <div class="input-box">
+            <h4>Importer votre identité RNE (PDF)</h4>
+            <input type="file" name="fileRne" accept=".pdf" placeholder="RNE PDF" (change)="onRneChange($event)" />
+          </div>
+
+          <div class="input-box">
+            <label>Identifiant</label>
+            <input formControlName="identifiant" type="text" placeholder="Enter l'identifiant RNE" required />
+          </div>
+
+
+        </div>
+        <div class="input-box">
+          <label>Secteur</label>
+          <div class="select-box">
+            <select formControlName="secteur" (change)="changeSecteur($event)">
+              <option value="">Choisir secteur</option>
+              <option ngValue="IT">IT</option>
+              <option ngValue="Finance">Finance</option>
+              <option ngValue="IT">comptabilité</option>
+              <option ngValue="IT">textile</option>
+              <option ngValue="IT">Industriel</option>
+              <option ngValue="IT">manegement</option>
+
+              <option ngValue="IT">electromecanique</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="invalid" *ngIf="isSubmitted && entrepriseForm?.invalid">
+          <sup>*</sup>Please provide all fields!
+        </div>
+        <button type="submit"  (ngSubmit)="onSubmit()" class="btn1">Enregister</button>
+        <div class="text-center pt-4 text-muted">Vous avez déjà un compte? <a id="forget"
+            routerLink="/login-entreprise">Se
+            connecter</a></div>
+      </form>
+    </section>
+  </div>
+  <app-footer></app-footer>
+</body>

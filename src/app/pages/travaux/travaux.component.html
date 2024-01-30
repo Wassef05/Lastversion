@@ -1,0 +1,19 @@
+<app-header></app-header>
+<div class="container content" style="height: 100%;">
+    <h1 class="title-container">Travaux de recherche</h1>
+
+
+    <div class="activity">
+        <div class="square" *ngFor="let item of travaux">
+            <img src="http://localhost:3000/{{item.image}}" class="mask">
+            <div class="h1">{{item.titre}}</div>
+            <p> {{item.description?.length>50 ? (item.description | slice:0:150)+'..' : item.description}}</p>
+
+            <div><a routerLink="/travaux-details/{{item._id}}" class="button">En savoir plus
+                </a></div>
+        </div>
+
+
+
+    </div>
+</div>

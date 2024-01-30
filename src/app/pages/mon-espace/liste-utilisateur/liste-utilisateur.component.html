@@ -1,0 +1,59 @@
+
+
+<div className='navigation'>
+    <i >
+      <i class='bx bx-home-alt-2'></i> Dashboard / <i class='bx bxs-calendar'></i> Liste des utilisateurs
+    </i>
+  </div>
+
+  <div class="main-content">
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+                  <div class="row mt-5">
+              <div class="col-lg-12 flx">
+                
+                  <h5>Liste des utilisateurs </h5>
+                  <input  type="text" class="search form-control" [(ngModel)]="value" (ngModelChange)="valuechange($event)" placeholder="Search by all fields">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12">
+                  <table id="exampl" class="table cell-border " style="width:100%">
+                      <thead class="TableHead">
+                          <tr>
+                              <th >Nom</th>
+                              <th>Prenom</th>
+                              <th>Adresse</th>
+                              <th>Date Naissance </th>
+                              <th style="padding-left: 98px;">Email</th>
+                              <th>Actiont</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <ng-container *ngFor="let item of users| paginate: { itemsPerPage: 5, currentPage: p}">
+                          
+                          <tr class="firstRow">
+                              <td>{{item.lastName}}</td>
+                              <td>{{item.lastName}}</td>
+                              <td>{{item.adresse}}</td>
+                              <td>{{item.dateNaissance
+                            }}</td>
+                              <td>{{item.email}}</td>
+                              <td>  <i class='bx bx-x-circle delete' (click)="delet(item._id)"></i></td>
+                          </tr>
+                        </ng-container>
+                      </tbody>
+                  </table>
+                  
+                  <div class="pag">
+                  <pagination-controls  previousLabel=" "
+                  nextLabel=" " (pageChange)="p = $event"></pagination-controls>
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div> 

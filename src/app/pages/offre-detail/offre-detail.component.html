@@ -1,0 +1,197 @@
+
+<body class="image" >
+
+
+    <app-header class="header-app"></app-header>
+
+
+
+    <div class="slideshow">
+
+
+        <div class="slide">
+
+            <!-- <img src="../../../assets/images/55.jpg" alt="Image de remplacement" > -->
+            <!-- <video src="/assets/images/yooreed2.mp4" autoplay loop type="video/mp4">  </video> -->
+            <div class="content-overlay">
+                <div class="container flexSB" style="align-items: center; position: relative;">
+                    <div class="logo">
+                        <h1>UTEC</h1>
+                        <span>EDUCATION & EMPLOIS</span>
+                    </div>
+
+                    <div class="social" style="position: absolute; right: 0; top: 0; display: flex;">
+                        <a class="social-icon" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a class="social-icon" href="https://www.twitter.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a class="social-icon" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="scroll-down-circle">
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<app-header></app-header>
+<div class="section-offres">
+    <div class="section-offre">
+        <div class="annonce">
+            <h1 class="annonce-titre">{{offre.titre}}</h1><br>
+            <span class="company">{{offre?.entreprise.nom}} - {{offre.entreprise.adresse}}</span>
+            <hr>
+            <button class="button-postule" (click)="open(offre._id,offre.entreprise)"> Postuler maintenant </button>
+        </div>
+        
+        <div class="annonce">
+            <div class="infos_job_details" style="    display: inline-flex;">
+               
+                <div class="col-md-4">
+                <dl>
+                <dt>Postes vacants:</dt>
+                <dd>{{offre.posteOuvert}}
+                    postes ouverts </dd>
+                </dl>
+                </div>
+                <div class="col-md-4">
+                <dl>
+                <dt>Type d'emploi désiré :</dt>
+                <dd>{{offre.typeEmploi}}</dd>
+                </dl>
+                </div>
+                <div class="col-md-4">
+                <dl>
+                <dt>Experience :</dt>
+                <dd>{{offre.niveauEtude}}</dd>
+                </dl>
+                </div>
+                <div class="col-md-4">
+                <dl>
+                <dt>Niveau d'étude :</dt>
+                <dd>Licence, Bac + 3</dd>
+                </dl>
+                </div>
+               
+               
+                <div class="clear"></div>
+                </div>
+        
+                <h1 style="    margin-top: 31px;
+                margin-bottom: 25px;">Description de l'emploi
+                </h1>
+                <p>{{offre.description}}</p>
+        
+                <h1  style="    margin-top: 31px;
+                margin-bottom: 25px;">{{offre.dateExpiration|date:'dd/MM/yyyy'}}
+        </h1>
+        </div>
+      
+    </div>
+    <div class="section-details">
+        <div class="employeur">
+           <h3 style="    font-weight: bold;">Employeur?</h3> <br>
+S'inscrire pour un compte employeur et <a class="poste"> Postez vos offres!</a>
+
+        </div>
+        <div class="condidat">
+            <h3 style="    font-weight: bold;">Découvrez plus d'emplois</h3> <br>
+
+            Rejoignez Tanitjobs maintenant et découvrez toutes les entreprises qui recrutent en Tunisie 
+           <br> <button class="button-condidat">Regoignez nous </button>
+ 
+         
+     </div>
+     <div class="offre-list condidat">
+        <h3 style="    font-weight: bold;">Offre d'emplois plus recent</h3> <br>
+
+        <ng-container *ngFor="let item of offres">
+            <div class="section-title">
+            <h2 class="title">{{offre.titre}}</h2><img src="http://localhost:3000/upload/{{item.entreprise.logo}}" alt="" class="menu-img">
+        </div>
+        <div class="company">
+            <H3>{{offre.entreprise.nom}} {{offre.entreprise.adresse}}</H3>
+        </div>
+        </ng-container>
+        
+     </div>
+    </div>
+
+    
+       
+</div>
+ 
+<div class="modal fade my-modal" tabindex="-1" role="dialog" #myModal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+           <h5 class="modal-title">Postuler à Développeurs {{offre?.titre}} chez {{offre?.entreprise.nom}} {{isLoged}}
+        </h5>
+           <button type="button" class="close" (click)="close()" aria-label="Close"><span aria-hidden="true">&times;</span>
+           </button>
+        </div>
+        <div class="modal-body">
+         <ng-container *ngIf="isLoged"> 
+            <p class="success">Votre condidat envoyé vers {{offre.entreprise.nom}} pour poste {{offre.titre}} </p>
+         </ng-container>
+         <ng-container *ngIf="!isLoged"> 
+            <div class="outer">
+                <div class="container">
+                    <div class="row">
+                        <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                            <div class="panel border bg-white">
+                                <div class="panel-heading">
+                                    <h3 class="pt-3 font-weight-bold">Connexion</h3>
+                                </div>
+                                <ng-container *ngIf="error">
+                                    <div class=" errorM" >{{errorMessage}}</div>
+                                </ng-container>
+                                
+                                <div class="pannel-body p-3">
+                                    <form [formGroup]="loginForm">
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                                                <span class="fa fa-user p-2"></span>
+                                                <input formControlName="username" type="text" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <small *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')" class="text-danger">*Username is required !</small>
+                                        <div class="form-group pt-3">
+                                            <div class="input-field" [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                                <span class="fa fa-lock p-2"></span>
+                                                <input formControlName="password" [type]="type" placeholder="Password">
+                                                <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                            </div>
+                                        </div>
+                                        <small *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')" class="text-danger">*Passowrd is required !</small>
+                                        <div class="form-inline fr mt-4">
+                                            
+                                        </div>
+                                        <button (click)="onSubmit()" type="submit" class="btn btn-primary btn-block mt-4 w-100">Login</button>
+                                       
+                                    </form>
+                                </div>
+                                <div class="rejoiner">
+                                    <span class="or">ou</span>
+                                    <a routerLinkActive="active" class="link">	Rejoignez-nous	</a>
+                                  </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            </div>
+         </ng-container>
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"  (click)="close()" >Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<app-footer></app-footer>

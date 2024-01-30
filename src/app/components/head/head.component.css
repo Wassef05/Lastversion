@@ -1,0 +1,22 @@
+/* Ajoutez ces styles CSS dans votre fichier CSS ou balise <style> */
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    /* background: hsla(241, 43%, 53%, 0.723);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); */
+          background-color: transparent;
+    border-radius: 50%; 
+    border-color: #000000;/* Forme du cercle */
+    margin-left: 10px; /* Espacement entre les icônes */
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: #000000; /* Couleur de l'icône */
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background-color: #ccc; /* Couleur de fond du cercle au survol */
+}

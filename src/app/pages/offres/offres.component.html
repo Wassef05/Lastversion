@@ -1,0 +1,75 @@
+<app-header ></app-header>
+<body class="image6" >
+
+        <div class="slideshow">
+    
+    
+            <div class="slide">
+    
+                <!-- <img src="../../../assets/images/55.jpg" alt="Image de remplacement" > -->
+                <!-- <video src="/assets/images/yooreed2.mp4" autoplay loop type="video/mp4">  </video> -->
+                <div class="content-overlay">
+                    <div class="container flexSB" style="align-items: center; position: relative;">
+                        
+    
+                        
+    
+                    </div>
+    
+                    <div class="scroll-down-circle">
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="img1">
+        <h4 class="h4">Dernières Offres d'emploi</h4>
+
+        <div class="jobs">
+                <form>
+                        <input class="form-control" type="text" [(ngModel)]="type" placeholder="Type contart  "
+                                name="type" />
+                        <input class="form-control" type="text" [(ngModel)]="key" placeholder="Mots Clés" name="key" />
+                        <button type="submit" class="button-searsh" (click)="search()">Rechercher</button>
+                </form>
+        </div>
+</div>
+
+<section style="background-color: rgb(41, 40, 41);">
+        <h2 class="annonces">{{offres.length}} annonces trouvées</h2>
+<br>
+<div class="menu-content">
+        <div class="menu-items">
+                <ng-container *ngFor="let item of offres ; let i = index">
+
+                        <div class="menu-item flex" *ngIf="i < offreLimit">
+                                <img src="http://localhost:3000/upload/{{item.entreprise.logo}}" alt="" class="menu-img">
+
+                                <div class="menuItem-details">
+                                        <h2 class="menuItem-topic">{{item.titre}}<span class="date">{{item.createdAt|date:'dd/MM/yyyy'}}</span>
+                                        </h2>
+                                        <p class="menuItem-des">
+                                            {{item.description?.length > 50 ? (item.description | slice:0:150)+'..' : item.description}}
+                                        </p>
+                                        <div class="menuItem-info">
+                                            <span class="discount-price"><i class='bx bx-building-house'></i> {{item.entreprise.nom}}</span>
+                                            <span class=""><i class='bx bxs-map'></i> {{item.entreprise.adresse}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="menu-buttons">
+                                        <button class="button see-more" routerLink="/job/{{item._id}}">Voir plus</button>
+                                    </div>
+                        </div>
+
+                </ng-container>
+
+        </div>
+        <button class="showMore" (click)="showMore()">Voir plus</button>
+
+
+
+</div>
+</section>
+
+
+<app-footer></app-footer>

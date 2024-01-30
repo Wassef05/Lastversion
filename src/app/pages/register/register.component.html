@@ -1,0 +1,130 @@
+
+<body class="image" >
+
+
+
+
+<!-- 
+    <div class="slideshow">
+
+
+        <div class="slide">
+
+            //<img src="../../../assets/images/55.jpg" alt="Image de remplacement" > -->
+            <!-- <video src="/assets/images/yooreed2.mp4" autoplay loop type="video/mp4">  </video>
+            <div class="content-overlay">
+                <div class="container flexSB" style="align-items: center; position: relative;">
+                    <div class="logo">
+                        <h1>UTEC</h1>
+                        <span>EDUCATION & EMPLOIS</span>
+                    </div>
+
+                    <div class="social" style="position: absolute; right: 0; top: 0; display: flex;">
+                        <a class="social-icon" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a class="social-icon" href="https://www.twitter.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        <a class="social-icon" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+                    </div>
+
+                </div>
+
+                <div class="scroll-down-circle">
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    
+        
+    
+<app-header></app-header>
+<div class="outer">
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                <div class="panel border bg-blue">
+                    <div class="panel-heading">
+                        <h3 class="pt-3 font-weight-bold" style="color: white;">Créer votre profil candidat</h3>
+                    </div>
+                    <div class="pannel-body p-3">
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['firstName'].dirty && registerForm.hasError('required','firstName')">
+                                    <h4>Entrer votre Nom</h4>
+                                    <input  formControlName="firstName" type="text" placeholder="Nom">
+                                
+                                </div>
+                            </div>
+                            <small *ngIf="registerForm.controls['firstName'].dirty && registerForm.hasError('required','firstName')" class="text-danger">*Nom  est  requis !</small>
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['lastName'].dirty && registerForm.hasError('required','lastName')">
+                                    <h4>Entrer votre prénom</h4>
+                                    <input formControlName="lastName" type="text" placeholder="Prénom">
+                                </div>
+                            </div>
+                            <small *ngIf="registerForm.controls['lastName'].dirty && registerForm.hasError('required','lastName')" class="text-danger">*Prénom  est  requis !</small>
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['email'].dirty && registerForm.hasError('required','email')">
+                                    <h4>Entrer votre Email</h4>
+                                    <input formControlName="email" type="text" placeholder="Email">
+                                </div>
+                            </div>
+                            <small *ngIf="registerForm.controls['email'].dirty && registerForm.hasError('required','email')" class="text-danger">*Email est  requis !</small>
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['adresse'].dirty && registerForm.hasError('required','adresse')">
+                                    <h4>Entrer votre Adresse</h4>
+                                    <input formControlName="adresse" type="text" placeholder="Adresse">
+                                </div>
+                            </div>
+                            <small *ngIf="registerForm.controls['adresse'].dirty && registerForm.hasError('required','adresse')" class="text-danger">*Adresse est  requis !</small>
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['password'].dirty && registerForm.hasError('required','password')">
+                                    <h4>Entrer votre mot de passe</h4>
+                                    <input formControlName="password" [type]="type" placeholder="Password">
+                                    <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
+                                </div>
+                            </div>
+                            <small *ngIf="registerForm.controls['password'].dirty && registerForm.hasError('required','password')" class="text-danger">*Password est requis !</small>
+                           
+
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['cv'].dirty && registerForm.hasError('required','cv')">
+                                    <h4>Importer votre CV</h4>
+                                    <input formControlName="cv" name="cv" type="file" accept=".pdf" style="border-radius: 10px; color: rgb(0, 0, 0); padding: 10px; background-color: rgb(235, 236, 240); padding: 25px;" required (change)="onChange($event)" placeholder="CV">
+                                    
+                                </div>
+                            </div>
+                            <!-- <small *ngIf="registerForm.controls['cv'].dirty && registerForm.hasError('required','cv')" class="text-danger">*cv est requis !</small> -->
+                            <!-- <small *ngIf="registerForm.get('cv').pristine && registerForm.hasError('required', 'cv')" class="text-danger">*cv est requis !</small> -->
+
+
+
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['lettremotivation'].dirty && registerForm.hasError('required','lettremotivation')">
+                                    <h4>Importer votre Lettre de motivaton</h4>
+                                    <input formControlName="lettremotivation" type="file" name="lettremotivation" style="border-radius: 10px; color: rgb(0, 0, 0); padding: 10px; background-color: rgb(235, 236, 240); padding: 25px;" (change)="onlmChange($event)" placeholder="Lettre de motivation">
+                                    
+                                </div>
+                            </div>
+                            <!-- <small *ngIf="registerForm.get('lettremotivation').pristine && registerForm.hasError('required', 'lettremotivation')" class="text-danger">*lettremotivation est requis !</small> -->
+
+
+
+                            <div class="form-group pt-3">
+                                <div class="input-box" [class.error]="registerForm.controls['date'].dirty && registerForm.hasError('required','date')">
+                                    <h4>Entrer votre date de naissance</h4>
+                                    <input formControlName="date" type="date" style="border-radius: 10px; width: 100%; padding: 25px;" placeholder="Date de naissance" class="date">
+                                     
+                                </div>
+                            </div>
+                            <small *ngIf="registerForm.controls['date'].dirty && registerForm.hasError('required','date')" class="text-danger">*date est requis !</small>
+                           
+                            <button (click)="onSubmit()" type="submit" class="button">Enregister</button>
+                            <div class="text-center pt-4 text-muted">Vous avez déjà un compte? <a href="#" id="forget"routerLink="/login">Se connecter</a></div>
+                        </form>
+                    </div>
+                  
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

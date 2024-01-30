@@ -1,0 +1,45 @@
+<div class="navigation">
+  <div className='navigation'>
+    <i>
+      <i class='bx bx-home-alt-2'></i> Dashboard / <i class='bx bxs-calendar'></i> Liste des Offres
+    </i>
+  </div>
+
+  <div class="main-content">
+    <div class="container">
+      <div class="form-group  section-search">
+        <button style="WIDTH: 21%;
+        font-size: 14px;" type="button" class="btn btn-outline-warning btn-serach"
+          routerLink="/mon-espace/ajouter-offre">Ajouter offres</button>
+        <input *ngIf="offres.length >0" type="text" class="search form-control" [(ngModel)]="value"
+          (ngModelChange)="valuechange($event)" placeholder="Search by all fields">
+      </div>
+      <span class="counter pull-right"></span>
+      <table class="table table-hover table-bordered results" *ngIf="offres.length >0">
+        <thead>
+          <tr>
+            <th class="col-md-3 col-xs-5">Titre</th>
+            <th class="col-md-3 col-xs-5">Date ouverture</th>
+            <th class="col-md-3 col-xs-4">Date expiration</th>
+            <th class="col-md-2 col-xs-3">Nombre de poste</th>
+            <th class="col-md-4 col-xs-3">Type </th>
+          </tr>
+
+        </thead>
+        <tbody class="bg">
+
+          <ng-container *ngFor="let item of offres">
+
+            <tr>
+              <th scope="row">{{item.titre}}</th>
+              <td>{{item.createdAt|date:'dd-MM-yyyy'}}</td>
+              <td>{{item.dateExpiration|date:'dd-MM-yyyy'}}</td>
+              <td>{{item.posteOuvert}}</td>
+              <td>{{item.typeEmploi}}</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,709 @@
+.outer{
+    height: 100vh;
+}
+/* Ajoutez ces styles CSS dans votre fichier CSS ou balise <style> */
+.logo{
+  left: -20px;
+}
+.hidden {
+  display: none;
+}
+.book-icon {
+  position: absolute;
+  right: 20px; /* Ajustez la valeur pour positionner à droite */
+  top: calc(35% - 50px); /* Ajustez la valeur pour le positionnement en haut */
+  width: 50px; /* Ajustez la taille du cercle */
+  height: 50px; /* Ajustez la taille du cercle */
+  background: hsla(241, 43%, 53%, 0.723);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 50%; /* Forme du cercle */
+  text-align: center;
+  line-height: 50px; /* Centrage vertical */
+  color: #fff; /* Couleur de l'icône */
+  font-size: 24px; /* Taille de l'icône */
+}
+.book-icon2 {
+  position: absolute;
+  right: 20px; /* Ajustez la valeur pour positionner à droite */
+  top: calc(42% - 50px); /* Ajustez la valeur pour le positionnement en haut */
+  width: 50px; /* Ajustez la taille du cercle */
+  height: 50px; /* Ajustez la taille du cercle */
+  background: hsla(241, 43%, 53%, 0.723);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 50%; /* Forme du cercle */
+  text-align: center;
+  line-height: 50px; /* Centrage vertical */
+  color: #fff; /* Couleur de l'icône */
+  font-size: 24px; /* Taille de l'icône */
+}
+
+.slide {
+  position: relative;
+}
+.scroll-down-circle {
+  position: absolute;
+  bottom: 400px;
+  right: 20px;
+  font-size: 24px;
+  color: #fff;
+ 
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: hsla(241, 43%, 53%, 0.723);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    /* color: #000; */
+    animation: bounce 0.5s infinite alternate;
+
+}
+@keyframes bounce {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(40px);
+  }
+}
+
+.content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le contenu */
+  color: white; /* Couleur du texte */
+  padding: 20px; /* Espacement du contenu */
+  box-sizing: border-box;
+}
+
+
+.brand-images {
+  display: flex;
+  padding-top: 5rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px; /* Ajustez cette valeur pour l'espace souhaité */
+}
+
+.brand-image {
+  flex: 1;
+  text-align: center;
+}
+
+.brand-img {
+  max-width: 100%;
+  height: auto;
+}
+.panel-heading{
+    text-align: center;
+    margin-bottom: 10px;
+    PADDING: 21PX;
+}
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.form-inline label{
+    padding-left: 10px;
+margin: 0;
+cursor: pointer;
+}
+
+.btn{
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+.panel{
+    margin-top: 148px;
+    min-height: 381px;
+    box-shadow: 20px 20px 80px rgb(218, 218, 218);
+    border-radius: 12px;
+ 
+}
+.input-field{
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: #4343FF;
+}
+.input-field.error{
+    border: 1px solid red;
+    color: red;
+}
+
+input[type='text'],
+input[type='password']{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+.fa-eye-slash.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.menu-img{
+   
+  object-fit: contain; /* Essayez différentes valeurs comme "cover", "contain", "fill", etc. */
+  width: 50px; /* Ajustez la largeur selon vos besoins */
+  height: 50px; /* Ajustez la hauteur selon vos besoins */
+  margin-right: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd; /* Ajoute une bordure inférieure entre les éléments */
+}
+.menuItem-details {
+  flex: 1;
+  margin-right: 10px;
+}
+.menuItem-des {
+  margin-bottom: 10px;
+}
+
+.menuItem-info {
+  display: flex;
+  flex-direction: column;
+}
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+.bordert{
+    border-top: 1px solid #aaa;
+position: relative;
+}
+.bordert:after{
+    content: "or connect with";
+    position: absolute;
+    top: -13px;
+    left: 33%;
+    background-color:#fff ;
+    padding: 0 8px;
+
+}
+.buttonn {
+    height: 55px;
+    width: 10%;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border-radius: 150px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(78, 200, 230, 0.932);
+    margin-left:20px;
+  }
+  .buttonn:hover {
+    background: rgb(106, 169, 221);
+  }
+
+.discount-price{
+    font-size: 1.5rem !important;
+    WIDTH: 109% !important;
+    margin-left: 35px !important;
+}
+.see-more{
+   
+    padding: 1rem 5rem;
+    background-image: linear-gradient(to right, #10b5ca, #00a5c4, #0094bd, #0084b3, #0073a8);
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.see-more:hover {
+    background: rgb(124, 175, 216);
+  }
+.btn-more{
+    height: 55px;
+    width: 12%;
+    color: #000000;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border-radius: 150px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-image: linear-gradient(to right, #10b5ca, #00a5c4, #0094bd, #0084b3, #0073a8);
+    margin-left:40%; 
+}
+.btn-more:hover{
+  background: rgb(124, 175, 216);
+
+}
+
+.date{
+    display: flex;
+    justify-content: end;
+    margin-top: -18px;
+}
+.button
+.newsletter-button:hover{
+    background: #21dd08;
+}
+.slideshow {
+    width: 100%; 
+    height: 200px;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(1);}
+
+video:not(:first-child) {
+  opacity: 0;
+}
+.video{
+    height: 80%;
+}
+#about{
+margin-top: 10%;
+}
+
+/* wassef */
+
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Spartan:wght@300;400;500&display=swap");
+:root {
+  --PrimaryColorvole: hsl(225, 50%, 48%);
+  --SecondaryColorvole: hsl(180, 17%, 95%);
+  --colorOnevole: hsl(15, 74%, 70%);
+  --colorTwovole: hsl(28, 100%, 82%);
+  --HoverColorvole: hsl(225, 56%, 59%);
+  --whiteColorvole: hsl(0, 0%, 100%);
+  --blackColorvole: hsl(0, 0%, 12%);
+  --textColorvole: hsl(240, 71%, 43%);
+  --borderColorvole: hsl(0, 0%, 83%);
+  --whiteColorDeamvole: hsl(0, 0%, 93%);
+  --greyBgvole: hsl(0, 0%, 96%);
+  --greyTextvole: rgb(145, 145, 145);
+  --inputColorvole: hsl(330, 12%, 97%);
+  --boxShadowvole: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --transition: .4s ease-in-out;
+}
+
+.support {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Spartan", sans-serif;
+  transition: 0.2s ease;
+}
+.support .sectionContainer .titlesDiv {
+  text-align: center;
+}
+.support .sectionContainer .titlesDiv small {
+  letter-spacing: 0.8rem;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: var(--blackColorvole);
+  line-height: 1.5rem;
+}
+.support .sectionContainer .infoDiv {
+  margin-top: 2rem;
+  gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: space-between; 
+}
+.support .sectionContainer .infoDiv .textDiv {
+  gap: 1.5rem;
+  flex: 1;
+}
+.support .sectionContainer .infoDiv .textDiv .singleInfo .number {
+  background: var(--PrimaryColorvole);
+  padding: 5px 12px;
+  width: 40px;
+  border-radius: 3rem;
+  text-align: center;
+  font-size: 13px;
+  font-style: 700;
+  color: var(--whiteColorvole);
+}
+.support .sectionContainer .infoDiv .textDiv .singleInfo .colorOnevole {
+  background: var(--colorOnevole);
+}
+.support .sectionContainer .infoDiv .textDiv .singleInfo .colorTwovole {
+  background: var(--colorTwovole);
+}
+.support .sectionContainer .infoDiv .imgDiv {
+  margin: auto;
+  flex: 1; /* Cela permet à l'image de prendre l'autre moitié de l'espace */
+
+}
+.support .sectionContainer .infoDiv .imgDiv img {
+  width: 100%;
+  max-width: 480px;
+}
+
+@media screen and (min-width: 570px) {
+  .support .sectionContainer .infoDiv .textDiv {
+    margin-top: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1332px) {
+  .support .sectionContainer .infoDiv {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 5rem;
+  }
+  .support .sectionContainer .infoDiv .textDiv {
+    margin-top: 0rem;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (min-width: 768px) {
+  .support .sectionContainer .infoDiv {
+    gap: 1rem;
+  }
+  .support .sectionContainer .infoDiv .textDiv .singleInfo p {
+    max-width: 500px;
+  }
+}
+
+
+section#subscribe {
+ 
+  background: url(../../../assets/images/subscribe-bg.png);
+  text-align: center;
+  color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 95%;
+  margin: auto;
+ height: 35rem;
+ padding: 4rem;
+  border-radius: 20px;
+  margin-bottom: 10rem;
+  background-attachment: fixed;
+}
+
+.subscribe h2 {
+  font-size: 3rem;
+  font-weight: 200;
+  line-height: 1.4;
+  text-transform: uppercase;
+  margin: 1.5rem 0;
+  padding-bottom: 1rem;
+}
+
+form > * {
+  width: 100%;
+  max-width: 50rem;
+  /* margin: 3rem auto; */
+}
+
+.inputabout {
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid #777;
+  border-radius: 30px 0 0 30px;
+  color: #fff;
+  outline: none;
+  width: 60%;
+  font-size: 1.6rem;
+   
+}
+::placeholder { 
+  color:gray !important;
+  font-size: 16px;
+}
+.btnabout {
+  padding: 1rem !important;
+
+  background-image: linear-gradient(to right, #10b5ca, #00a5c4, #0094bd, #0084b3, #0378af);
+  border: 1px solid var(--form-button) !important;
+  border-radius:5px 30px 30px 5px  !important;
+  margin-left: 1rem;
+  color: #fff !important;
+  font-size: 1.7rem !important;
+  font-weight: 200 !important;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icon {
+  margin: 2rem;
+  padding: 1rem;
+  width: 4rem;
+  color: #F0F4F4;
+  height: 4rem;
+  border: 2px solid #fff;
+  background: hsla(241, 43%, 53%, 0.723);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.social-icon:hover {
+  background-image: linear-gradient(to right, #10b5ca, #00a5c4, #0094bd, #0084b3, #0378af);
+}
+
+@media screen and (max-width: 600px) {
+  form input {
+    width: 60%;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Spartan:wght@300;400;500&display=swap");
+:root {
+  --Primaryvolecolor: hsl(225, 50%, 48%);
+  --SecondaryVolecolor: hsl(180, 17%, 95%);
+  --colorOnevole: hsl(15, 74%, 70%);
+  --colorTwovole: hsl(28, 100%, 82%);
+  --HoverColorvole: hsl(225, 56%, 59%);
+  --whiteColorvole: hsl(0, 0%, 100%);
+  --blackColorvole: hsl(0, 0%, 12%);
+  --textColorvole: hsl(240, 1%, 48%);
+  --borderColorvole: hsl(0, 0%, 83%);
+  --whiteColorDeamvole: hsl(0, 0%, 93%);
+  --greyBgvole: hsl(0, 0%, 96%);
+  --greyTextvole: rgb(145, 145, 145);
+  --inputColorvole: hsl(330, 12%, 97%);
+  --boxShadowvole: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  --transition: .4s ease-in-out;
+}
+
+.volefour {
+  /* background: var(--SecondaryVolecolor); */
+  background-color: 	#daf1f1;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  padding-top: 40rem;
+  padding-bottom: 5rem;
+  scroll-behavior: smooth;
+  font-family: "Spartan", sans-serif;
+  transition: 0.2s ease;
+}
+.volefour .volefourinfoContainer .titleDiv {
+  flex-direction: column;
+  text-align: center;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.volefour .volefourinfoContainer .cardsDiv {
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.volefour .volefourinfoContainer .cardsDiv .singleCard {
+  /* background: var(--whiteColorvole); */
+  background-color:azure;
+  padding: 3rem 2rem;
+  border-radius: 10rem;
+  gap: 1rem;
+  text-align: center;
+  margin: auto;
+  height: 320px;
+  width: 90%;
+  max-width: 250px;
+}
+.volefour .volefourinfoContainer .cardsDiv .singleCard .iconDiv {
+  justify-content: center;
+  margin: auto;
+  background: var(--Primaryvolecolor);
+  width: -moz-max-content;
+  width: max-content;
+  height: 55px;
+  padding: 1rem;
+  border-radius: 3rem;
+}
+.volefour .volefourinfoContainer .cardsDiv .singleCard .iconDiv .icon {
+  color: var(--whiteColorvole);
+}
+.volefour .volefourinfoContainer .cardsDiv .singleCard .cardTitle {
+  color: var(--blackColorvole);
+  font-weight: 700;
+}
+.volefour .volefourinfoContainer .cardsDiv .singleCard .colorOnevole {
+  background: var(--colorOnevole);
+}
+.volefour .volefourinfoContainer .cardsDiv .singleCard .colorTwo {
+  background: var(--colorTwovole);
+}
+
+@media screen and (min-width: 570px) {
+  .volefour .volefourinfoContainer .titleDiv {
+    flex-direction: row;
+  }
+  .volefour .volefourinfoContainer .titleDiv h2 {
+    text-align: left;
+    max-width: 500px;
+  }
+  .volefour .volefourinfoContainer .cardsDiv {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 768px) {
+  .volefour .volefourinfoContainer {
+    padding: 0 6rem;
+  }
+  .volefour .volefourinfoContainer .titleDiv {
+    width: 90%;
+    margin: auto;
+    align-items: center;
+  }
+  .volefour .volefourinfoContainer .cardsDiv {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .volefour .volefourinfoContainer .cardsDiv .singleCard {
+    max-width: 260px;
+    padding: 3rem;
+  }
+}
+
+
+.iconwassef {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #00c1b145;
+  width: 50px;
+  height: 50px;
+  color: #000000;
+}
+
+.iconwassef mat-icon {
+  font-size: 20px; /* Taille de l'icône */
+}
+
+
+.iconwassef1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #009ac173;
+  width: 50px;
+  height: 50px;
+  color: #000000;
+}
+
+.iconwassef mat-icon {
+  font-size: 20px; /* Taille de l'icône */
+}
+
+
+.iconwassef2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #d3d4e8;
+  width: 50px;
+  height: 50px;
+  color: #000000;
+}
+
+.iconwassef mat-icon {
+  font-size: 20px; /* Taille de l'icône */
+}
+
+
+/* home.component.css */
+.social-group {
+  right: -140px; /* Ajustez la valeur pour positionner à droite */
+  top: calc(35% - -150px);
+  position: absolute;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row-reverse; /* Modifier de column à row */
+ width: 50px; /* Ajustez la taille du cercle */
+  height: 50px; /* Ajustez la taille du cercle */
+  background: hsla(241, 43%, 53%, 0.723);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-radius: 50%; /* Forme du cercle */
+  text-align: center;
+  line-height: 50px; /* Centrage vertical */
+  color: #fff; /* Couleur de l'icône */
+  font-size: 24px; /* Taille de l'icône */
+}
+.social-group i {
+  margin: auto; /* Centrer l'icône verticalement et horizontalement */
+}
+.social-icons {
+  display: none;
+  flex-direction: row;
+  position: absolute;
+  top: 100%;
+}
+
+.social-group:hover .social-icons {
+  display: flex;
+}
+
+.social-icon {
+  margin: 5px;
+  text-decoration: none;
+}
+h1 {
+  font-size: 2.5em; /* Ajustez la taille de la police selon vos préférences */
+  color: #ffffff; /* Couleur du texte */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre du texte */
+  text-align: center; /* Ajustez si nécessaire en fonction de l'emplacement souhaité */
+  margin-top: 100px; /* Ajustez la marge supérieure selon vos préférences */
+  /* Ajoutez d'autres propriétés CSS selon vos besoins */
+}
+.slide-title {
+  font-family: 'Arial', sans-serif;
+  text-shadow: 8px 8px 9px #0f0f0f; 
+  text-align: center;
+  margin-top: 255px;
+  position: absolute;
+  top: 25px;
+  transform: translateX(57%);
+  z-index: 1;
+  color: white;
+  font-size: 2.5em;
+  line-height: 1.5;
+} 
+

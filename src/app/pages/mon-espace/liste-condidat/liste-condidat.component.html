@@ -1,0 +1,250 @@
+<div class="navigation">
+	<div className='navigation'>
+		<i>
+			<i class='bx bx-home-alt-2'></i> Dashboard / <i class='bx bxs-calendar'></i> Liste des Condidats
+		</i>
+	</div>
+
+	<div class="main-content">
+		<!-- /* Please ❤ this if you like it! 😊 */ -->
+
+		<!-- Page wrapper/Container Section -->
+		<div class="container" *ngIf="condidat.length >0">
+			<!-- Responsive Table Section -->
+
+			<ng-container *ngIf="role=='Condidat'">
+
+				<table class="responsive-table">
+					<!-- Responsive Table Header Section -->
+					<thead class="responsive-table__head">
+						<tr class="responsive-table__row">
+							<th class="responsive-table__head__title responsive-table__head__title--name">Titre
+
+							</th>
+							<th class="responsive-table__head__title responsive-table__head__title--types">Date
+								d'expireation</th>
+							<th class="responsive-table__head__title responsive-table__head__title--status">Entreprise
+							</th>
+							<th class="responsive-table__head__title responsive-table__head__title--update">Logo</th>
+							<th class="responsive-table__head__title responsive-table__head__title--country">Status</th>
+							<th class="responsive-table__head__title responsive-table__head__title--country">Date</th>
+						</tr>
+					</thead>
+					<!-- Responsive Table Body Section -->
+					<tbody class="responsive-table__body">
+						<ng-container *ngFor="let item of condidat">
+
+							<tr class="responsive-table__row">
+								<td class="responsive-table__body__text responsive-table__body__text--name">
+
+									{{item.offre.titre}}
+								</td>
+								<td class="responsive-table__body__text responsive-table__body__text--types">
+									{{item.offre.dateExpiration|date:'dd-MM-yyyy'}}</td>
+								<td class="responsive-table__body__text responsive-table__body__text--status">
+									{{item.entreprise.nom}} </td>
+								<td class="responsive-table__body__text responsive-table__body__text--update"><img
+										style="    width: 22%;"
+										src="http://localhost:3000/upload/{{ item.entreprise.logo }}">
+								</td>
+								<td class="responsive-table__body__text responsive-table__body__text--country">
+									<ng-container *ngIf="item.status=='Présélectionne'">
+
+										<span class="status-indicator status-indicator--active"></span>
+										{{item.status}}
+
+
+									</ng-container>
+
+									<ng-container *ngIf="item.status=='Réfuse'">
+
+										<span class="status-indicator status-indicator--inactive"></span>
+										{{item.status}}
+
+
+									</ng-container>
+
+									<ng-container *ngIf="item.status=='En attente'">
+
+										<span class="status-indicator status-indicator--new"></span>
+										{{item.status}}
+
+
+									</ng-container>
+									<ng-container *ngIf="item.status=='Accepter'">
+
+										<span class="status-indicator status-indicator--active"></span>
+										{{item.status}}
+
+
+									</ng-container>
+
+								</td>
+								<td class="responsive-table__body__text responsive-table__body__text--country">
+									{{item.createdAt|date:'dd-MM-yyyy'}}</td>
+							</tr>
+						</ng-container>
+					</tbody>
+				</table>
+			</ng-container>
+
+
+			
+			<ng-container *ngIf="role=='Employeur'" >
+
+				<table class="responsive-table">
+					<!-- Responsive Table Header Section -->
+					<thead class="responsive-table__head">
+						<tr class="responsive-table__row">
+							<th class="responsive-table__head__title responsive-table__head__title--name">Titre
+
+							</th>
+
+							<th class="responsive-table__head__title responsive-table__head__title--status">Condidat
+							</th>
+							<th class="responsive-table__head__title responsive-table__head__title--update">CV</th>
+							<th class="responsive-table__head__title responsive-table__head__title--name">lettremotivation</th>
+
+							<th class="responsive-table__head__title responsive-table__head__title--country">Status</th>
+							<th class="responsive-table__head__title responsive-table__head__title--types">Modifier
+								status
+							</th>
+							<th class="responsive-table__head__title responsive-table__head__title--country">Date</th>
+						</tr>
+					</thead>
+					<!-- Responsive Table Body Section -->
+					<tbody class="responsive-table__body">
+						<ng-container *ngFor="let item of condidat">
+
+							<tr class="responsive-table__row">
+								<td class="responsive-table__body__text responsive-table__body__text--name">
+
+									{{item?.offre?.titre}}
+								</td>
+
+								<td class="responsive-table__body__text responsive-table__body__text--status">
+									{{item.user.firstName}} {{item.user.lastName}}
+								</td>
+
+								<td class="responsive-table__body__text responsive-table__body__text--update">
+									
+									<a
+										href="http://localhost:3000/upload/{{item.user.cv}}" target="_blank">
+										<i class="fa fa-eye" aria-hidden="true"></i> 
+									</a>
+								</td>
+
+								<td class="responsive-table__body__text responsive-table__body__text--name">
+									<a href="http://localhost:3000/upload/{{item.user.lettremotivation}}" target="_blank">
+									  <i class="fa fa-eye" aria-hidden="true"></i>
+									</a>
+								  </td>
+								<td class="responsive-table__body__text responsive-table__body__text--country">
+									<ng-container *ngIf="item.status=='Présélectionne'">
+
+										<span class="status-indicator status-indicator--active"
+											(click)="response(item._id)"></span>
+										{{item.status}}
+
+
+									</ng-container>
+
+									<ng-container *ngIf="item.status=='Réfuse'">
+
+										<span class="status-indicator status-indicator--inactive"></span>
+										{{item.status}}
+
+
+									</ng-container>
+
+									<ng-container *ngIf="item.status=='En attente'">
+
+										<span class="status-indicator status-indicator--new"></span>
+										{{item.status}}
+
+
+									</ng-container>
+									<ng-container *ngIf="item.status=='Accepter'">
+
+										<span class="status-indicator status-indicator--active"></span>
+										{{item.status}}
+
+
+									</ng-container>
+								</td>
+								<td class="responsive-table__body__text responsive-table__body__text--types">
+									<select (change)="onSelected($event,item._id)">
+										<option value="En attente">En attente</option>
+										<option value="Réfuse">Réfuse</option>
+										<option value="Présélectionne">Présélectionne</option>
+									</select>
+								</td>
+								<td class="responsive-table__body__text responsive-table__body__text--country">
+									{{item.createdAt|date:'dd-MM-yyyy'}}</td>
+							</tr>
+						</ng-container>
+					</tbody>
+				</table>
+			</ng-container>
+		</div>
+
+		<div class="empty" *ngIf="condidat.length==0">Pas de condidat encore</div>
+
+	</div>
+
+	<div class="modal fade my-modal" tabindex="-1" role="dialog" #myModal>
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+
+
+					<button type="button" class="close" (click)="close()" aria-label="Close"><span
+							aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<!-- <div class="modal-body">
+
+					<section class="container">
+						<header>Choisir date d'entretient</header>
+						<div class="input-box">
+							<label>Date d'entretient</label>
+							<input type="date" [(ngModel)]="date" name="date" placeholder="Enter titre" />
+						</div>
+					</section>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary date" (click)="send()">Envoyer</button>
+				</div> -->
+
+				<div class="modal-body">
+
+					<section class="container">
+						<header>Choisir date d'entretient</header>
+
+						<div class="input-box">
+							<label>Objet</label>
+							<input type="text" [(ngModel)]="emailSubject" name="emailSubject" placeholder="Entrer votre objet" />
+						</div>
+
+						<div class="input-box">
+							<label>Description</label>
+							<!-- Utilisez [(ngModel)]="customDescription" pour lier le champ de texte -->
+							<textarea [(ngModel)]="customDescription" rows="10" name="description" placeholder="Message"></textarea>
+						  </div>
+						<div class="input-box">
+							<label>Date d'entretient</label>
+							<input type="date" [(ngModel)]="date" name="date" placeholder="Enter titre" />
+						</div>
+					</section>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary date" (click)="send()">Envoyer</button>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</div>

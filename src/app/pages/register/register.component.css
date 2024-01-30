@@ -1,0 +1,212 @@
+
+  .panel {
+    background-color: #7675c38c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 2rem auto;
+    width: auto;
+    max-width: 600px;
+    margin-top: 20;
+    margin-top: 63%;
+    width: 123%;
+    margin-left: -15%;
+
+}
+.panel-heading h3 {
+    color: #343a40; /* Couleur de texte plus foncée pour une meilleure lisibilité */
+    margin-bottom: 20px; /* Espace après le titre */
+}
+input[type='text'],
+input[type='password'],
+input[type='file'],
+input[type='date'] {
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 15px; /* Espace après chaque champ */
+}
+
+.input-box h4 {
+    margin-bottom: 5px; /* Espace entre le label et le champ */
+    color: #495057; /* Couleur du texte du label */
+}
+
+.input-box.error input {
+    border-color: #dc3545; /* Couleur de la bordure pour les erreurs */
+}
+button {
+    width: 100%;
+    background-color: #043c61;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 2rem;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #f1f3f4; /* Couleur au survol */
+    color: black;
+}
+.slide {
+    position: relative;
+  }
+  .slideshow {
+    width: 100%; 
+    height: 1px;
+  
+
+}
+  .scroll-down-circle {
+    position: absolute;
+    bottom: 400px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+   
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: hsla(241, 43%, 53%, 0.723);
+      -webkit-backdrop-filter: blur(10px);
+              backdrop-filter: blur(10px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      /* color: #000; */
+      animation: bounce 0.5s infinite alternate;
+  
+  }
+  @keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+  }
+  .logo{
+    left: -20px;
+  }
+  .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le contenu */
+    color: rgb(8, 8, 8); /* Couleur du texte */
+    padding: 0px; /* Espacement du contenu */
+    box-sizing: border-box;
+  }
+  
+  .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  .brand-images {
+    display: flex;
+    padding-top: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px; /* Ajustez cette valeur pour l'espace souhaité */
+  }
+  
+  .brand-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .brand-img {
+    max-width: 100%;
+    height: auto;
+  }
+  .panel-heading{
+      text-align: center;
+      margin-bottom: 10px;
+      PADDING: 21PX;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.image{
+background-image: url('../../../assets/images/1234.jpg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+}
+  
+  .social-icon {
+    margin: 2rem;
+    padding: 1rem;
+    width: 4rem;
+    color: #F0F4F4;
+    height: 4rem;
+    border: 2px solid #fff;
+    background: hsla(241, 43%, 53%, 0.723);
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .social-icon:hover {
+    background-image: linear-gradient(to right, #10b5ca, #00a5c4, #0094bd, #0084b3, #0378af);
+  }
+  @media screen and (max-width: 600px) {
+    form input {
+      width: 60%;
+    }
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&family=Spartan:wght@300;400;500&display=swap");
+  :root {
+    --Primaryvolecolor: hsl(225, 50%, 48%);
+    --SecondaryVolecolor: hsl(180, 17%, 95%);
+    --colorOnevole: hsl(15, 74%, 70%);
+    --colorTwovole: hsl(28, 100%, 82%);
+    --HoverColorvole: hsl(225, 56%, 59%);
+    --whiteColorvole: hsl(0, 0%, 100%);
+    --blackColorvole: hsl(0, 0%, 12%);
+    --textColorvole: hsl(240, 1%, 48%);
+    --borderColorvole: hsl(0, 0%, 83%);
+    --whiteColorDeamvole: hsl(0, 0%, 93%);
+    --greyBgvole: hsl(0, 0%, 96%);
+    --greyTextvole: rgb(145, 145, 145);
+    --inputColorvole: hsl(330, 12%, 97%);
+    --boxShadowvole: box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    --transition: .4s ease-in-out;
+  }   
+  
+  @keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(40px);
+    }
+  }
+  
+ 
+
+
+
+ 

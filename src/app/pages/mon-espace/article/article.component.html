@@ -1,0 +1,107 @@
+
+
+<div class="container">
+	<h2 style="text-align: center;">Liste des traveaux</h2>
+    <div class="choix">
+        <button class="btn btn-outline-warning btn-serach" (click)="open()">Ajouter un traveaux</button>
+        <input type="text"  [(ngModel)]="value" (ngModelChange)="valuechange($event)" placeholder="Filter par tous fields"/>
+    </div>
+	<div class="table">
+		<div class="table-header">
+			<div class="header__item"><a id="name" class="filter__link" href="#">Fichier</a></div>
+			<div class="header__item"><a id="name" class="filter__link" href="#">Titre</a></div>
+			<div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Labo</a></div>
+			<div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Specialite</a></div>
+			<div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Action</a></div>
+ 
+		</div>
+		<div class="table-content">	
+			 
+			 <ng-container *ngFor="let item of travaux| paginate: { itemsPerPage: 5, currentPage: p}">
+             
+			<div class="table-row">
+				<div class="table-data">  <a
+                    href="http://localhost:3000/{{item.fichier}}" target="_blank">Télecharger</a></div>
+				<div class="table-data">{{item.titre}}</div>
+				<div class="table-data">{{item.labo}}</div>
+				<div class="table-data">{{item.specialite}}</div>
+				<div class="table-data"><i class='bx bxs-trash' (click)="delete(item._id)"></i></div>
+		 
+			</div>
+        </ng-container>
+		</div>	
+	</div>
+    <div class="pag">
+    <pagination-controls  previousLabel=" "
+    nextLabel=" " (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<div class="modal fade my-modal" tabindex="-1" role="dialog" #myModal>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+
+
+                <button type="button" class="close" (click)="close()" aria-label="Close"><span
+                        aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <section class="container">
+                    <header>Ajouter votre projet de recherche</header>
+                    <form [formGroup]="travauxForm" (ngSubmit)="onSubmit()" class="form">
+                        <div class="input-box">
+                            <label>Titre</label>
+                            <input type="text" formControlName="titre" placeholder="Enter titre" required />
+                        </div>
+                        <div class="input-box">
+                            <label>Description</label>
+                            <textarea formControlName="description"></textarea>
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label>Support</label>
+                                <input type="file" (change)="onChange($event)"   required />
+                            </div>
+
+                        </div>
+
+                        <div class="column">
+                            <div class="input-box">
+                                <label>Image</label>
+                                <input type="file" (change)="onChangeI($event)"   required />
+                            </div>
+
+                        </div>
+                        <div class="column">
+                            <div class="input-box">
+                                <label>Laboratoire</label>
+                                <input type="text" formControlName="labo"   required />
+                            </div>
+
+                        </div>
+
+                        <div class="column">
+                            <div class="input-box">
+                                <label>specialite</label>
+                                <input type="text"   formControlName="specialite"  required />
+                            </div>
+
+                        </div>
+                        <div class="choixx">
+
+                        <button  type="submit">Submit</button>
+                    </div>
+                    </form>
+                </section>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="close()">Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+
+<body class="image" >
+
+
+    <app-header class="header-app"></app-header>
+
+
+
+   
+
+
+
+
+
+    <div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-Candidat-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-Candidat" type="button" role="tab" aria-controls="nav-Candidat"
+                    aria-selected="true">Candidat</button>
+                <button class="nav-link" id="nav-Employeur-tab" data-bs-toggle="tab" data-bs-target="#nav-Employeur"
+                    type="button" role="tab" aria-controls="nav-Employeur" aria-selected="false">Entreprise</button>
+                <button class="nav-link" id="nav-Administrateur-tab" data-bs-toggle="tab"
+                    data-bs-target="#nav-Administrateur" type="button" role="tab" aria-controls="nav-Administrateur"
+                    aria-selected="false">Administrateur</button>
+
+
+            </div>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+            <!--candidat Tab -->
+            <div class="tab-pane fade show active" id="nav-Candidat" role="tabpanel" aria-labelledby="nav-Candidat-tab">
+
+                <section>
+                    <div class="form-box">
+                        <div class="form-value">
+                            <form [formGroup]="loginForm">
+                                <h2>Connexion</h2>
+
+                                <div class="inputbox"
+                                    [class.error]="loginForm.controls['username'].dirty && loginForm.hasError('required','username')">
+                                    <input formControlName="username" type="text" placeholder="Email">
+                                </div>
+
+                                <small
+                                    *ngIf="loginForm.controls['username'].dirty && loginForm.hasError('required','username')"
+                                    class="text-danger">*Username is required !
+                                </small>
+
+                                <div>
+                                    <div class="inputbox"
+                                        [class.error]="loginForm.controls['password'].dirty && loginForm.hasError('required','password')">
+                                        <input formControlName="password" [type]="type" placeholder="Mot de passe ">
+                                        <!-- <i (click)="hideShowPass()" class="fa {{eyeIcon}}"></i> -->
+                                    </div>
+                                </div>
+                                <small
+                                    *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('required','password')"
+                                    class="text-danger">*Passowrd is required !</small>
+
+                                    <div class="forget">
+                                        <label><input type="checkbox">Se souvenir de moi</label>
+                                        <a href="#">Mot de passe oublié?</a>
+                                      </div>
+                                <button (click)="onSubmit()" type="submit"> Se connecter</button>
+                                <div class="register">
+                                    <p>Don't have an account? <a href="http://localhost:58604/espace-employeur"> S'inscrire</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Fin du Nouveau Tab -->
+
+            <div class="tab-pane fade" id="nav-Employeur" role="tabpanel" aria-labelledby="nav-Employeur-tab">
+                <app-login-entreprise></app-login-entreprise>
+            </div>
+            <div class="tab-pane fade" id="nav-Administrateur" role="tabpanel" aria-labelledby="nav-Administrateur-tab">
+                <app-login-admin></app-login-admin>
+            </div>
+
+
+        </div>
+
+        <app-footer></app-footer>

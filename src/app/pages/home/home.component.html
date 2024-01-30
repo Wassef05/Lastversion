@@ -1,0 +1,383 @@
+<!-- <app-headercrgg></app-headercrgg> -->
+<!-- <app-head></app-head> -->
+<app-header></app-header>
+<main>
+
+
+
+
+
+    <section class="home" id="home">
+
+        <div class="home-content">
+
+
+            <div class="slideshow">
+
+
+
+                <div class="slide">
+
+
+                    <div class="slideshow-container">
+
+                        <!-- <h1 class="slide-title">UTEC <br> Le Portail de l'Opportunité en Tunisie</h1> -->
+
+                        <img [src]="images[currentImageIndex]" alt="Image de remplacement">
+                    </div>
+
+
+                    <div class="content-overlay">
+                        <!-- <div class="container flexSB" style="align-items: center; position: relative;">
+
+                            <div class="social" style="position: absolute; right: 0; top: 0; display: flex;">
+                                <a class="social-icon" href="https://www.facebook.com" target="_blank"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a class="social-icon" href="https://www.twitter.com" target="_blank"><i
+                                        class="fa fa-linkedin"></i></a>
+                                <a class="social-icon" href="https://www.instagram.com" target="_blank"><i
+                                        class="fa fa-instagram"></i></a>
+                            </div>
+
+                        </div> -->
+                        <!-- home.component.html -->
+
+                        <div class="container flexSB" style="align-items: center; position: relative;">
+
+                            <div class="social-group" (mouseenter)="showIcons()" (mouseleave)="hideIcons()">
+                                <i class="fa fa-share-alt"></i> <!-- Grande icône -->
+                                <div class="social-icons">
+                                    <a class="social-icon" href="https://www.instagram.com" target="_blank"><i
+                                            class="fa fa-instagram"></i></a>
+                                    <a class="social-icon" href="https://www.linkedin.com" target="_blank"><i
+                                            class="fa fa-linkedin"></i></a>
+
+                                    <a class="social-icon" href="https://www.facebook.com" target="_blank"><i
+                                            class="fa fa-facebook"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="book-icon">
+                            <i class="fa fa-book"></i>
+
+                        </div>
+                        <div class="book-icon2">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <div class="scroll-down-circle">
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                        <div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <!-- <section class="section about" id="about">
+            <div class="about-content container">
+                    <div class="about-imageContent">
+                            <img src="assets/images/emploi.jpg" alt="" class="about-img">
+
+                            <div class="aboutImg-textBox">
+                                    <i class='bx bx-heart heart-icon flex'></i>
+                                    <p class="content-description">Proposant des offres d’emploi dans toutes les régions et à l’étranger, mis à jour quotidiennement.</p>
+                            </div>
+                    </div>
+
+                    <div class="about-details">
+                            <div class="about-text">
+                                    <h4 class="content-subtitle"><i>A propos
+                                </i></h4>
+                                    <h2 class="content-title">UTEC, le portail tunisien <br>de l’emploi</h2>
+                                    <p class="content-description">Mettez à jours votre Cv en ligne, chercher un Travail, c'est aussi bien rédiger votre CV,  mettre en avant votre expérience et vos atouts.</p>
+ 
+                            </div>
+
+                            <div class="about-buttons flex">
+                                    <button class="button" style="background-color: #043c61; color: white;" routerLink="/jobs">Trouver un emploi</button>
+                                    <a href="#" class="about-link flex">
+                                            <span class="link-text">Publier une annonce</span>
+                                            <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                                    </a>
+                            </div>
+                    </div>
+
+            </div>
+    </section> -->
+    <!-- <section class="section about" id="about">
+    <div class="about-content container" style="display: flex; justify-content: center; align-items: center;">
+
+     
+        <div class="about-details" style="flex: 1; padding: 20px;">
+            <div class="about-text">
+                <h4 class="content-subtitle"><i>A propos</i></h4>
+                <h2 class="content-title">UTEC, le portail tunisien <br>de l’emploi</h2>
+                <p class="content-description">Mettez à jours votre Cv en ligne, chercher un Travail, c'est aussi bien rédiger votre CV,  mettre en avant votre expérience et vos atouts.</p>
+            </div>
+            <div class="about-buttons flex">
+                <button class="button" style="background-color: #043c61; color: white;" routerLink="/jobs">Trouver un emploi</button>
+                <a href="#" class="about-link flex">
+                    <span class="link-text">Publier une annonce</span>
+                    <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                </a>
+            </div>
+        </div>
+
+        
+        <div class="about-imageContent" style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                <img src="assets/images/emploi.jpg" alt="" class="about-img" style="clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); width: 150%; height: auto; border: none; box-shadow: none;">
+                <div class="aboutImg-textBox" style="order: 2;">
+                    <i class='bx bx-heart heart-icon flex' style="order: 3;"></i>
+                    <p class="content-description" style="order: 1;">Proposant des offres d’emploi dans toutes les régions et à l’étranger, mis à jour quotidiennement.</p>
+                </div>
+            </div>
+            
+
+    </div>
+</section> -->
+
+    <div class='volefour section'>
+        <div class="volefourinfoContainer container">
+            <div class="titleDiv flex">
+                <h2 data-aos="fade-right" data-aos-duration="2500"
+                    style="display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;">
+                    Élargissez Votre Horizon avec UTEC : Programmes de Formation Avancés
+                </h2>
+
+                <button data-aos="fade-left" data-aos-duration="2500" class='btn'
+                    style="padding: 1rem 4rem; background-image: linear-gradient(to right, #10b5ca, #00a5c4, #0094bd, #0084b3, #0073a8); border-radius: 3rem; border: none; outline: none; cursor: pointer;">
+                    Découvrez Plus
+                </button>
+
+            </div>
+
+            <div class="cardsDiv" style="display: flex; justify-content: space-between; gap: 20px;">
+                <div data-aos="fade-up" data-aos-duration="2500" class="singleCard grid">
+                    <!-- <div class="iconDiv flex">
+                    <span class='icon'>
+                        
+                             <i class="fas fa-laptop-code"></i>
+                            <a class="social-icon" href="#" target="_blank"><i class="fas fa-laptop-code"></i></a>
+
+                        
+                    </span>
+                </div> -->
+                    <div class="iconDiv flex">
+                        <span class='iconwassef1'>
+                            <mat-icon>calendar_today</mat-icon>
+                        </span>
+                    </div>
+                    <span class="cardTitle">Innovation Technologique</span>
+                    <p>Participez à des projets de pointe et développez des compétences en technologie de demain.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="3500" class="singleCard grid">
+                    <div class="iconDiv flex colorOne">
+                        <span class="iconwassef">
+                            <mat-icon>security</mat-icon>
+                        </span>
+                    </div>
+
+                    <span class="cardTitle">Réseautage Professionnel</span>
+                    <p>Établissez des relations précieuses avec des professionnels et des experts du secteur.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-duration="4500" class="singleCard grid">
+                    <div class="iconDiv flex colorTwo">
+                        <span class='iconwassef2'>
+                            <mat-icon>bookmark</mat-icon>
+                        </span>
+                    </div>
+                    <span class="cardTitle">Croissance de Carrière</span>
+                    <p>Accédez à des opportunités de carrière uniques et accélérez votre ascension professionnelle.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Menu Section -->
+    <section class="section menu" id="menu">
+        <div class="menu-container container">
+            <!-- <div class="meu-text">
+                        <h4 class="section-subtitle"><i>Offres </i></h4>
+                        <h2 class="section-title">Trouver un emploi</h2>
+                        <p class="section-description">
+                                Si vous êtes à la recherche d’un travail dans l’une des régions de la Tunisie ou
+                                ailleurs, UTEC.com vous propose, en permanence, des annonces d'emploi pour des postes
+                                vacants dans votre domaine d’activité. Les entreprises informatique en Tunisie ou
+                                Offshore , les centres d’appels et les bureaux et cabinets de recrutement et d'intérim
+                                sont les recruteurs les plus actifs sur le site.
+                        </p>
+                </div> -->
+
+            <div class='support container section'>
+                <div class="sectionContainer" style="color: aliceblue">
+                    <div class="titlesDiv">
+                        <small>Supporter votre carrière</small>
+                        <h2>Planifier votre carrière avec confiance </h2>
+                        <p>Bénéficiez d'un accompagnement personnalisé pour votre carrière, et découvrez à quoi vous
+                            attendre à chaque étape de votre parcours</p>
+                    </div>
+
+                    <div class="infoDiv grid">
+                        <div class="textDiv grid">
+                            <div data-aos="fade-down" data-aos-duration="2500" class="singleInfo">
+                                <span class="number" style="background-color:#3D5CB8">01</span>
+                                <h4>Explorez des Opportunités de Stage PFE Exceptionnelles</h4>
+                                <p>Stage PFE stimulantes sur UTEC, offrant aux étudiants l'opportunité d'appliquer leurs
+                                    connaissances académiques dans un environnement professionnel dynamique.</p>
+                            </div>
+
+                            <div data-aos="fade-down" data-aos-duration="3500" class="singleInfo">
+                                <span class="number colorOnevole" style="background-color: #EB967A">02</span>
+                                <h4>Explorez des opportunités professionnelles exceptionnelles sur la plateforme UTEC
+                                </h4>
+                                <p>connectant les talents aux entreprises de premier plan. </p>
+                            </div>
+
+                            <div data-aos="fade-down" data-aos-duration="4500" class="singleInfo">
+                                <span class="number colorTwovole" style="background-color: #FFCEA3">03</span>
+                                <h4>Découvrez des Expériences de Travail Innovantes avec UTEC</h4>
+                                <p>
+                                    UTEC fournit une plateforme unique où les professionnels en début de carrière
+                                    peuvent s'engager dans des projets innovants, établissant des liens essentiels avec
+                                    l'industrie et façonnant leur future carrière professionnelle.</p>
+                            </div>
+                        </div>
+
+                        <div data-aos="fade-left" data-aos-duration="2500" class="imgDiv">
+                            <img src="/assets/images/99.png" alt="" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="menu-content">
+                <div class="menu-items">
+                    <ng-container *ngFor="let item of offres | slice:0:displayedOffersLimit">
+                        <div class="menu-item">
+                            <img src="http://localhost:3000/upload/{{item.entreprise.logo}}" alt="" class="menu-img">
+                            <div class="menuItem-details">
+                                <h2 class="menuItem-topic">{{item.titre}}<span class="date">{{item.createdAt|date:'dd/MM/yyyy'}}</span>
+                                </h2>
+                                <p class="menuItem-des">
+                                    {{item.description?.length > 50 ? (item.description | slice:0:150)+'..' : item.description}}
+                                </p>
+                                <div class="menuItem-info">
+                                    <span class="discount-price"><i class='bx bx-building-house'></i> {{item.entreprise.nom}}</span>
+                                    <span class=""><i class='bx bxs-map'></i> {{item.entreprise.adresse}}</span>
+                                </div>
+                            </div>
+                            <div class="menu-buttons">
+                                <button class="button see-more" routerLink="/job/{{item._id}}">Voir plus</button>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+        <button class="btn-more" (click)="loadMoreOffers()">Voir plus</button>
+
+    </section>
+
+
+    <!-- Brand Section -->
+    <section class="section brand">
+        <div class="brand-container container">
+            <h4 class="section-subtitle"><i>Nos partenaires</i></h4>
+
+            <div class="brand-images">
+                <div class="brand-image">
+                    <img src="assets/images/11.png" alt="" class="brand-img">
+                </div>
+                <div class="brand-image">
+                    <img src="assets/images/22.png" alt="" class="brand-img">
+                </div>
+                <div class="brand-image">
+                    <img src="assets/images/33.png" alt="" class="brand-img">
+                </div>
+                <div class="brand-image">
+                    <img src="assets/images/44.png" alt="" class="brand-img">
+                </div>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+
+
+    <!-- Newsletter Section -->
+    <!-- <section class="section newsletter" style="background-color: rgb(134, 114, 114);">
+        <div class="newletter-container container">
+            <a href="#" class="logo-content flex">
+                    <i class='bx bx-coffee logo-icon'></i>
+                    <span class="logo-text">UTEC</span>
+                </a>
+
+                <p class="section-description">Vous avez le droit d'exiger que vos informations personnelles soient supprimées de UTEC.com. Vous pouvez réviser, corriger, mettre à jour ou changer l'information dans le profil de votre compte   en tout temps en entrant simplement dans votre compte .
+                </p>
+
+                <div class="newsletter-inputBox">
+                        <input type="email" placeholder="emai@example.com" class="newletter-input">
+                        <button class="button newsletter-button" style="background-color: #043c61 ; color: rgb(255, 255, 255);">Subscribe</button>
+                </div>
+
+                <div class="newsletter media-icons flex">
+                    <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+    </section> -->
+    <section id="subscribe">
+        <div class="container subscribe" data-aos="fade-up">
+            <h2>Subscribe now
+                <!-- You can replace this with an SVG, image or icon font equivalent -->
+                <span style="padding-left: 1rem;"></span>
+            </h2>
+            <div style="display: flex; align-items: center;">
+                <div class="form-control" style="background: transparent">
+                    <input class="inputabout" type="text" placeholder="Enter Your Email..."
+                        style="background: transparent" />
+                </div>
+                <button class="btnabout">Subscribe</button>
+            </div>
+            <div class="social-icons">
+
+                <div class="social-icon">
+                    <a class="fa fa-twitter" style="font-size:24px; color: white;" title="Twitter"
+                        href="https://twitter.com/tanitjobscom" target="_blank">
+                    </a>
+                </div>
+                <div class="social-icon">
+                    <a class="fa fa-facebook" style="font-size:24px; color: white;" title="Twitter"
+                        href="https://twitter.com/tanitjobscom" target="_blank">
+                    </a>
+                </div>
+                <div class="social-icon">
+                    <a class="fa fa-link" style="font-size:24px; color: white;" title="Twitter"
+                        href="https://twitter.com/tanitjobscom" target="_blank">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
